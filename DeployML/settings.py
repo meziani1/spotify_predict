@@ -23,9 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vu1xz#+cbw00z!k#9jy!9d14bzt3fc=1ia#pur3r1hq1##e^-*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG =False
+ALLOWED_HOSTS = ['skipped-prediction-spotify.herokuapp.com']
 
 
 # Application definition
