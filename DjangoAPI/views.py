@@ -27,7 +27,7 @@ class SkippedView(viewsets.ModelViewSet):
 def status(df):
     try:
         
-        model = joblib.load(r"https://github.com/meziani1/spotify_predict/tree/master/DjangoAPI/XGBOOST.sav")
+        model = joblib.load("./AjangoAPI/XGBOOST.sav")
         scaler=StandardScaler()
         scaler.fit(df)
         X = scaler.transform(df) 
