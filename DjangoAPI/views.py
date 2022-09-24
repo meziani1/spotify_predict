@@ -28,12 +28,12 @@ def status(df):
     try:
         
         model = joblib.load("./DjangoAPI/XGBOOST.sav")
-        scaler=StandardScaler()
-        scaler.fit(df)
-        X = scaler.transform(df) 
-        y_pred = model.predict(X) 
-        #y_pred=(y_pred==1) 
-        #result = "Yes" if y_pred else "No"
+        #scaler=StandardScaler()
+        #scaler.fit(df)
+        #X = scaler.transform(df) 
+        y_pred = model.predict(df) 
+        y_pred=(y_pred==1) 
+        result = "Yes" if y_pred else "No"
         result=y_pred
         return result 
     except ValueError as e: 
