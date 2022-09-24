@@ -27,7 +27,7 @@ class SkippedView(viewsets.ModelViewSet):
 def status(df):
     try:
         
-        model = joblib.load("./AjangoAPI/XGBOOST.sav")
+        model = joblib.load("./DjangoAPI/XGBOOST.sav")
         scaler=StandardScaler()
         scaler.fit(df)
         X = scaler.transform(df) 
