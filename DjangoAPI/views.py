@@ -33,8 +33,7 @@ def status(df):
         #X = scaler.transform(df) 
         y_pred = model.predict(df) 
         y_pred=(y_pred==1) 
-        result = "Yes" if y_pred else "No"
-        result=y_pred
+        result = "This track will be skipped" if y_pred else "No skip"
         return result 
     except ValueError as e: 
         return Response(e.args[0], status.HTTP_400_BAD_REQUEST) 
