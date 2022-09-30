@@ -26,7 +26,7 @@ SECRET_KEY = 'vu1xz#+cbw00z!k#9jy!9d14bzt3fc=1ia#pur3r1hq1##e^-*'
 DEBUG =True
 ALLOWED_HOSTS = ['*']
 
-STATIC_URL = 'static/'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -119,3 +119,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
