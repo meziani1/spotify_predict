@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 {% load static %}
+{% block css %}
+<style>
+#bod {
+    background-image: url("./DjangoAPI/satic/img/bgr1.png");
+}
+h1  {
+    color : #d70505;
+    text-align: center ;
+    text-size-adjust: 40px;
+    font-family: cursive;
+  }
+
+</style>
+{% endblock %}
+
 <html lang="en">
 <head>
     <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -9,7 +24,7 @@
     <title>Status</title>
 </head>
 
-<body  style="background-image: url('{% static 'img/bgr1.png' %}');"> 
+<body  id ='bod' style="background-image: url('{% static 'img/bgr1.png' %}');"> 
     
     <h1>Skipped Status: {{data}}</h1>
 </body>
