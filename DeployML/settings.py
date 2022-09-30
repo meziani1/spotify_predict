@@ -26,7 +26,7 @@ SECRET_KEY = 'vu1xz#+cbw00z!k#9jy!9d14bzt3fc=1ia#pur3r1hq1##e^-*'
 DEBUG =True
 ALLOWED_HOSTS = ['*']
 
-
+STATIC_URL = 'static/'
 # Application definition
 
 INSTALLED_APPS = [
