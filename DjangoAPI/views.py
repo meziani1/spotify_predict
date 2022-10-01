@@ -310,7 +310,7 @@ def FormView(request):
                  df['hist_user_behavior_reason_end_fwdbtn']=0
                  df['hist_user_behavior_reason_end_remote']=0
                  df['hist_user_behavior_reason_end_trackdone']=1   
-            a_file = open(r"C:\Users\admin\Desktop\projet_django\file.pkl", "rb")
+            a_file = open(r"./DjangoAPI/file.pkl", "rb")
             output = pickle.load(a_file)  
             for cle, valeur in output.items():
               if cle==df["track"].tolist()[0]:
