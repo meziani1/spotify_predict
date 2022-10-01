@@ -27,5 +27,4 @@ class SkippedForm(forms.ModelForm):
     hist_user_behavior_reason_end=forms.TypedChoiceField(choices=[('backbtn','backbtn'),
     ('clickrow','clickrow'),('endplay','endplay'),('fwdbtn','fwdbtn'),
     ('logout','logout'),('remote','remote'),('trackdone','trackdone')])
-    
-            
+    track=forms.CharField()

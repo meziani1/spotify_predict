@@ -54,7 +54,7 @@ def FormView(request):
             context_type = form.cleaned_data['context_type']
             hist_user_behavior_reason_start = form.cleaned_data['hist_user_behavior_reason_start']
             hist_user_behavior_reason_end = form.cleaned_data['hist_user_behavior_reason_end']
-           
+            track=form.cleaned_data['track']
            
             df=pd.DataFrame({'session_position':[session_position], 
             'session_length':[session_length], 
@@ -89,7 +89,9 @@ def FormView(request):
             'hist_user_behavior_reason_end_fwdbtn':[hist_user_behavior_reason_end],
             'hist_user_behavior_reason_end_logout':[hist_user_behavior_reason_end],
             'hist_user_behavior_reason_end_remote':[hist_user_behavior_reason_end],
-            'hist_user_behavior_reason_end_trackdone':[hist_user_behavior_reason_end]})
+            'hist_user_behavior_reason_end_trackdone':[hist_user_behavior_reason_end],
+            'track':[track]
+            })
            
 
             if df["week_day"].tolist()[0]=="Monday" :
@@ -307,7 +309,15 @@ def FormView(request):
                  df['hist_user_behavior_reason_end_endplay']=0
                  df['hist_user_behavior_reason_end_fwdbtn']=0
                  df['hist_user_behavior_reason_end_remote']=0
-                 df['hist_user_behavior_reason_end_trackdone']=1         
+                 df['hist_user_behavior_reason_end_trackdone']=1   
+            a_file = open(r"C:\Users\admin\Desktop\projet_django\file.pkl", "rb")
+            output = pickle.load(a_file)  
+            for cle, valeur in output.items():
+              if cle==df["track"].tolist()[0]:
+                df["track"]=valeur
+                break
+             # else :
+                # df["track"]=0 
             categorical_variables=['context_type','hist_user_behavior_reason_start','hist_user_behavior_reason_end']
             df = df.drop(categorical_variables, axis=1)
         
